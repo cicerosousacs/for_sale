@@ -1,0 +1,2 @@
+module AdminsForsale::PaymentsHelper
+end

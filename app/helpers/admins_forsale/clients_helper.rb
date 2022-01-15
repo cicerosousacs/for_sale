@@ -1,0 +1,2 @@
+module AdminsForsale::ClientsHelper
+end
