@@ -2,7 +2,7 @@ class AdminsForsale::ClientsController < AdminsForsaleController
   before_action :set_client, only: [:edit, :update, :destroy]
 
   def index
-    @clients = Client.all
+    @clients = Client.all.page(params[:page])
   end
 
   def new

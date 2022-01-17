@@ -30,7 +30,7 @@
                           <%= form.text_field :description, class:"form-control", placeholder:"Informe a descrição" %>
                           <br>
                           <%= form.label :category %>
-                          <%= form.select("category_id", @category_options, { include_blank: 'Selecione..'} ) %>
+                          <%= form.select("category_id", @category_options, {include_blank: 'Selecione..'}, class:"form-control" ) %>
                             <br>
                           <%= form.label :stock %>
                           <%= form.text_field :stock, class:"form-control", placeholder:"Informe o estoque" %>

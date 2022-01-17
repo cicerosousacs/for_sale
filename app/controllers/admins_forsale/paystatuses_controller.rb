@@ -1,4 +1,4 @@
-class AdminsForsale::PaystatusController < AdminsForsaleController
+class AdminsForsale::PaystatusesController < AdminsForsaleController
   before_action :set_paystatus, only: [:edit, :update, :destroy]
 
   def index
@@ -12,7 +12,7 @@ class AdminsForsale::PaystatusController < AdminsForsaleController
   def create
     @paystatus = Paystatus.new(params_paystatus)
       if @paystatus.save()
-        redirect_to admins_forsale_paystatus_path, notice: "Status de Pagamento cadastrado com sucesso!"
+        redirect_to admins_forsale_paystatuses_path, notice: "Status de Pagamento cadastrado com sucesso!"
       else
         render :new
       end
@@ -23,7 +23,7 @@ class AdminsForsale::PaystatusController < AdminsForsaleController
 
   def update  
     if @paystatus.update(params_paystatus)
-      redirect_to admins_forsale_paystatus_path, notice: "Status de Pagamento atualizado com sucesso!"
+      redirect_to admins_forsale_paystatuses_path, notice: "Status de Pagamento atualizado com sucesso!"
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class AdminsForsale::PaystatusController < AdminsForsaleController
 
   def destroy
     if @paystatus.destroy
-      redirect_to admins_forsale_paystatus_path, notice: "Status de Pagamento excluído com sucesso!"
+      redirect_to admins_forsale_paystatuses_path, notice: "Status de Pagamento excluído com sucesso!"
     else
       render :index
     end

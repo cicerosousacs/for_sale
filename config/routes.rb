@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :clients
-    resources :paystatus
+    resources :paystatuses
+    resources :sales
 
     get 'welcome/index'
   end

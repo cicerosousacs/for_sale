@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-12">
-    <h1>Tipos de Pagamentos</h1>
+    <h1>Status do Pagamentos</h1>
   </div>
 </div>
 
@@ -10,21 +10,21 @@
         <tr>
           <th>Tipo</th>
           <th>
-            <%= link_to new_admins_forsale_payment_path, class:"btn btn-success btn-circle" do %>
+            <%= link_to new_admins_forsale_paystatus_path, class:"btn btn-success btn-circle" do %>
               <i class="fa fa-plus"></i>
             <% end %> 
           </th>
         </tr>
         </thead>
         <tbody>
-        <% @payments.each do |payment| %>
+        <% @paystatuses.each do |paystatus| %>
         <tr>
-          <td><%= payment.type %></td>
+          <td><%= paystatus.type %></td>
             <td style="width: 110px">         
-              <%= link_to edit_admins_forsale_payment_path(payment), class:"btn btn-primary btn-circle" do %>
+              <%= link_to edit_admins_forsale_paystatus_path(paystatus), class:"btn btn-primary btn-circle" do %>
                 <i class="fa fa-edit"></i>
               <% end %>
-              <%= link_to admins_forsale_payment_path(payment), method: :delete, class:"btn btn-danger btn-circle", data: {confirm: "Certeza?"} do %>
+              <%= link_to admins_forsale_paystatus_path(paystatus), method: :delete, class:"btn btn-danger btn-circle", data: {confirm: "Certeza?"} do %>
                 <i class="fa fa-minus"></i>
               <% end %>         
             </td>

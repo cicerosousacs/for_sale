@@ -1,2 +1,0 @@
-module AdminsForsale::PaystatusHelper
-end

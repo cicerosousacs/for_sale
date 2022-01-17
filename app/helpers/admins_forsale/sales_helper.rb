@@ -1,0 +1,2 @@
+module AdminsForsale::SalesHelper
+end
