@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_143316) do
+ActiveRecord::Schema.define(version: 2022_01_17_170904) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -61,6 +61,19 @@ ActiveRecord::Schema.define(version: 2022_01_17_143316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "client_id"
+    t.integer "payment_id"
+    t.string "invoice"
+    t.integer "paystatus_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_sales_on_client_id"
+    t.index ["payment_id"], name: "index_sales_on_payment_id"
+    t.index ["paystatus_id"], name: "index_sales_on_paystatus_id"
   end
 
 end
