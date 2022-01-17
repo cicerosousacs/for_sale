@@ -15,6 +15,7 @@ DEFAULT_FILE_PATH = File.join(Rails.root, 'lib', 'tmp')
     show_spinner("Tipo de Categorias...") { %x(rails dev:add_category) }
     show_spinner("Clientes de Exemplo...") { %x(rails dev:add_clients) }
     show_spinner("Produtos de Exemplo...") { %x(rails dev:add_products) }
+    show_spinner("Vendas de Exemplo...") { %x(rails dev:add_sales) }
   else
     puts "Você não esta em ambiente de desenvolvimento!"
   end
@@ -81,6 +82,19 @@ end
         category: Category.all.sample,
         stock: Faker::Number.number(digits: 3),
         price: Faker::Number.decimal_part(digits: 2)
+      )
+    end
+  end
+
+  desc "Adcionando Vendas de Exemplo"
+  task add_sales: :environment do
+    5.times do |i|
+      Sale.create!(
+        date: Faker::Date.in_date_period,
+        client: Client.all.sample,
+        payment: Payment.all.sample,
+        invoice: Faker::Number.number(digits: 1),
+        paystatus: Paystatus.all.sample
       )
     end
   end
