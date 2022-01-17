@@ -77,11 +77,14 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                        <%= link_to admins_forsale_categories_path do %>
+                            <i class="collapse-item" href="#">Categoria</i> 
+                        <% end %>
                         <%= link_to admins_forsale_payments_path do %>
                             <i class="collapse-item" href="#">Pagamento</i> 
                         <% end %>
-                        <%= link_to admins_forsale_categories_path do %>
-                            <i class="collapse-item" href="#">Categoria</i> 
+                        <%= link_to admins_forsale_paystatus_index_path do %>
+                            <i class="collapse-item" href="#">Status de Pagamento</i> 
                         <% end %>
                     </div>
                 </div>
