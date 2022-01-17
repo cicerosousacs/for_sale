@@ -10,6 +10,8 @@ class AdminsForsale::SalesController < AdminsForsaleController
 
   def new
     @sale = Sale.new
+
+    @addproducts = @sale.addproducts
   end
 
   def create
