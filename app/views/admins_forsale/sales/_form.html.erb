@@ -22,24 +22,33 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                        <%= form_with(model: [ :admins_forsale, @sale ], local: true ) do |form| %>
-                          <%= form.label :date %>
-                          <%= form.text_field :date, class:"form-control", placeholder:"Data da venda" %>
+                      <%= form_with(model: [ :admins_forsale, @sale ], local: true ) do |form| %>
+                        <%= form.label :date %>
+                        <%= form.text_field :date, class:"form-control", placeholder:"Data da venda" %>
 
-                          <%= form.label :client %>
-                          <%= form.select("client_id", @client_options, {include_blank: 'Selecione...'}, class:"form-control")%>
-                          <br>
-                          <%= form.label :payment %>
-                          <%= form.select("payment_id", @payment_options, {include_blank: 'Selecione...'}, class:"form-control") %>
-                          <br>
-                          <%= form.label :invoice %>
-                          <%= form.text_field :stock, class:"form-control" %>
+                        <%= form.label :client %>
+                        <%= form.select("client_id", @client_options, {include_blank: 'Selecione...'}, class:"form-control")%>
+                        <br>
+                        <%= form.label :payment %>
+                        <%= form.select("payment_id", @payment_options, {include_blank: 'Selecione...'}, class:"form-control") %>
+                        <br>
+                        <%= form.label :invoice %>
+                        <%= form.text_field :stock, class:"form-control" %>
 
-                          <%= form.label :paystatus %>
-                          <%= form.select("paystatus_id", @paystatus_options, {include_blank: 'Selecione...'}, class:"form-control") %>
-                          <br>
-                          <button type="submit" class="btn btn-primary">Salvar</button>
-                        <% end %>
+                        <%= form.label :paystatus %>
+                        <%= form.select("paystatus_id", @paystatus_options, {include_blank: 'Selecione...'}, class:"form-control") %>
+                        <br>
+                        <div id='products'>
+
+                          <%= form.fields_for :addproducts do |addproduct|%>
+                            <%= render partial: "addproducts_fields", locals: { f:addproduct }%>
+                          <% end %>
+
+                          <%= link_to_add_association 'Adicionar', form, :addproducts %>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                      <% end %>
                     </div>
                     <!-- /.col-lg-6 (nested) -->
                 </div>
