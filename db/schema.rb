@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_170904) do
+ActiveRecord::Schema.define(version: 2022_01_17_185821) do
+
+  create_table "addproducts", force: :cascade do |t|
+    t.string "product"
+    t.string "price"
+    t.integer "sales_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sales_id"], name: "index_addproducts_on_sales_id"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false

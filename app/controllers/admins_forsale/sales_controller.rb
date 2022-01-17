@@ -43,7 +43,8 @@ class AdminsForsale::SalesController < AdminsForsaleController
   private
 
   def params_sale
-    params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id)
+    params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id,
+    addproducts_attributes: [:id, :product, :price, :_destroy])
   end
 
   def set_sale
@@ -59,6 +60,6 @@ class AdminsForsale::SalesController < AdminsForsaleController
   end
 
   def set_client_options
-    @client_options = Client.all.pluck(:name, :id)
+    @client_options = Client.all.pluck(:name, :id,)
   end
 end
