@@ -14,10 +14,12 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 #/views/layout
-Rails.application.config.assets.precompile += %w( admins_forsale.js admins_forsale.css )
+Rails.application.config.assets.precompile += %w( admins_forsale.js admins_forsale.css
+                                                  layout_session.css )
 
 #/lib/assets
-Rails.application.config.assets.precompile += %w( sb-admin-2.min.js sb-admin-2.min.css )
+Rails.application.config.assets.precompile += %w( sb-admin-2.min.js sb-admin-2.min.css
+                                                  custom.min.css )
 
 #/vendor/assets
 Rails.application.config.assets.precompile += %w( bootstrap_4.0.6/js/bootstrap.bundle.min.js )

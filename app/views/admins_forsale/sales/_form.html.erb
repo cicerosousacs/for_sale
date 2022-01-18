@@ -39,7 +39,7 @@
                         <%= form.select("paystatus_id", @paystatus_options, {include_blank: 'Selecione...'}, class:"form-control") %>
                         <br>
 
-                        <div id='adproduct'>
+                        <div id='adproducts'>
 
                           <%= form.fields_for :adproducts do |adproduct| %>
                             <%= render partial: "adproduct_fields", locals: { f: adproduct } %>

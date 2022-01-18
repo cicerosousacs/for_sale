@@ -44,7 +44,8 @@ class AdminsForsale::SalesController < AdminsForsaleController
   private
 
   def params_sale
-    params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id, adproducts_attributes: [:id, :product, :price, :_destroy])
+    params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id, 
+    adproducts_attributes: [:id, :product, :price, :_destroy])
   end
 
   def set_sale

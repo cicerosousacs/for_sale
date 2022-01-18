@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>For Sale</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= stylesheet_link_tag    'layout_session' %>
+  </head>
+
+  <body class="login">
+
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <h1>Bem Vindo !</h1>
+              
+                <div>
+                  <%= f.email_field :email, autofocus: true, placeholder:"Email", class:"form-control" %>
+                </div>
+                <div>
+                  <%= f.password_field :password, placeholder:"Senha", class:"form-control" %>
+                </div>
+
+                <% if devise_mapping.rememberable? %>
+
+                <div>
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+                <% end %>
+
+                <div class="actions">
+                  <%= f.submit "Log in", class:"btn btn-default submit" %>
+                </div>
+
+
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <div class="clearfix"></div>
+                <br/>
+
+                <div>
+                  <h1><i class="fa fa-shopping-cart"></i> For Sale !</h1>
+                  <p>©2022 Todos os direitos reservados. Kraken Web Systems.</p>
+                </div>
+              </div>
+            <% end %>
+          </section>
+        </div>
+      </div>
+    </div>
+
+<% if flash %>
+  <% flash.each do |key, value| %>
+    <%= javascript_tag do %>
+        $.bootstrapGrowl("<%= value %>", {
+        ele: 'body', // which element to append to
+        type: 'success', // (null, 'info', 'danger', 'success')
+        offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+        align: 'center', // ('left', 'right', or 'center')
+        width: 350, // (integer, or 'auto')
+        delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+        allow_dismiss: true, // If true then will display a cross to close the popup.
+        stackup_spacing: 10 // spacing between consecutively stacked growls.
+        });
+    <% end %>
+  <% end %>
+<% end %>
+
+  </body>
+</html>
