@@ -88,7 +88,7 @@ end
 
   desc "Adcionando Vendas de Exemplo"
   task add_sales: :environment do
-    5.times do |i|
+    10.times do |i|
       Sale.create!(
         date: Faker::Date.in_date_period,
         client: Client.all.sample,
