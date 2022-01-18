@@ -1,24 +1,9 @@
-# README
+Após baixar:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+bundle
 
-Things you may want to cover:
+rails db:migrate
 
-* Ruby version
+yarn add jquery
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails dev:setup
