@@ -11,7 +11,6 @@ class AdminsForsale::SalesController < AdminsForsaleController
   def new
     @sale = Sale.new
 
-    @addproducts = @sale.addproducts
   end
 
   def create
@@ -45,8 +44,7 @@ class AdminsForsale::SalesController < AdminsForsaleController
   private
 
   def params_sale
-    params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id,
-    addproducts_attributes: [:id, :product, :price, :_destroy])
+    params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id, adproducts_attributes: [:id, :product, :price, :_destroy])
   end
 
   def set_sale

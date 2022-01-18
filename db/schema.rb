@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_185821) do
+ActiveRecord::Schema.define(version: 2022_01_18_022803) do
 
   create_table "addproducts", force: :cascade do |t|
     t.string "product"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2022_01_17_185821) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "adproducts", force: :cascade do |t|
+    t.string "product"
+    t.string "price"
+    t.integer "sale_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sale_id"], name: "index_adproducts_on_sale_id"
   end
 
   create_table "categories", force: :cascade do |t|
