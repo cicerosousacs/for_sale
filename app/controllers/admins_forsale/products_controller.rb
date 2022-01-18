@@ -3,7 +3,7 @@ class AdminsForsale::ProductsController < AdminsForsaleController
   before_action :set_category_options, only: [:new, :create, :edit, :update]
 
   def index
-    @products = Product.includes(:category).all.page(params[:page])
+    @products = Product.includes(:category).page(params[:page])
   end
 
   def new

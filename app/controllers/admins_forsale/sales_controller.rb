@@ -5,7 +5,7 @@ class AdminsForsale::SalesController < AdminsForsaleController
   before_action :set_client_options, only: [:new, :create, :edit, :update]
 
   def index
-    @sales = Sale.all.page(params[:page])
+    @sales = Sale.includes(:client, :payment, :paystatus).page(params[:page])
   end
 
   def new
