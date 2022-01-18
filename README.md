@@ -4,6 +4,7 @@ bundle
 
 rails db:migrate
 
-yarn add jquery
-
 rails dev:setup
+
+User:admin@admin.com
+Password: 12345678
