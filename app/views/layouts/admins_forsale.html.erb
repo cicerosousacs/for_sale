@@ -48,6 +48,12 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
+                <%= link_to new_admins_forsale_sale_path do %>
+                    <i class="nav-link fas fa-fw fa-shopping-cart"> 
+                    Nova Venda </i> 
+                <% end %>
+            </li>
+            <li class="nav-item">
                 <%= link_to admins_forsale_clients_path do %>
                     <i class="nav-link fas fa-fw fa-users">
                      Clientes </i> 
@@ -57,13 +63,6 @@
                 <%= link_to admins_forsale_products_path do %>
                     <i class="nav-link fas fa-fw fa-barcode"> 
                     Produtos </i> 
-                <% end %>
-            </li>
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <%= link_to admins_forsale_sales_path do %>
-                    <i class="nav-link fas fa-fw fa-shopping-cart"> 
-                    Vendas </i> 
                 <% end %>
             </li>
             <!-- Divider -->
@@ -92,6 +91,7 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -229,14 +229,16 @@
         ele: 'body', // which element to append to
         type: 'success', // (null, 'info', 'danger', 'success')
         offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
-        align: 'center', // ('left', 'right', or 'center')
+        align: 'right', // ('left', 'right', or 'center')
         width: 350, // (integer, or 'auto')
-        delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+        delay: 3000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
         allow_dismiss: true, // If true then will display a cross to close the popup.
         stackup_spacing: 10 // spacing between consecutively stacked growls.
         });
     </script>
 <% end %>
+
+
 
 </body>
 

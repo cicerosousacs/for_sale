@@ -91,7 +91,7 @@ end
     Client.all.each do |client|
       rand(2..10).times do |i|
         params = { sale: {
-          date: Faker::Date.in_date_period,
+          date: Faker::Date.in_date_period(year: 2021),
           client: Client.all.sample,
           payment: Payment.all.sample,
           invoice: Faker::Number.number(digits: 1),
