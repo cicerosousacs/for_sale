@@ -49,8 +49,14 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <%= link_to new_admins_forsale_sale_path do %>
-                    <i class="nav-link fas fa-fw fa-shopping-cart"> 
+                    <i class="nav-link fas fa-fw fa-credit-card"> 
                     Nova Venda </i> 
+                <% end %>
+            </li>
+            <li class="nav-item">
+                <%= link_to admins_forsale_sales_path do %>
+                    <i class="nav-link fas fa-fw fa-shopping-cart"> 
+                    Vendas </i> 
                 <% end %>
             </li>
             <li class="nav-item">
@@ -238,6 +244,14 @@
     </script>
 <% end %>
 
+    <script>
+$(function() {
+    $( "#calendario" ).datepicker({
+  startView: 1,
+  minViewMode: 1
+    });
+});
+    </script>
 
 
 </body>
