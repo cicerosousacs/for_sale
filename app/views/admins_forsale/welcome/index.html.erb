@@ -3,7 +3,8 @@
     <h1>Ultimas Vendas</h1>
     <hr class="sidebar-divider">
   </div>
-</div>
+
+
 
   <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
@@ -14,24 +15,22 @@
           <th>Pagamento</th>
           <th>Comprovante</th>
           <th>Status</th>
-
+          <th></th>
         </tr>
         </thead>
         <tbody>
         <% @sales.each do |sale| %>
         <tr>
-          <td><%= sale.date %></td>
+          <td><%= sale.date.to_s(:datemask) %></td>
           <td><%= sale.client.name %></td>
           <td><%= sale.payment.type %></td>
           <td><%= sale.invoice %></td>
           <td><%= sale.paystatus.type %></td>
-            <td style="width: 120px">         
+            <td style="width: 60px">         
               <%= link_to edit_admins_forsale_sale_path(sale), class:"btn btn-primary btn-circle" do %>
                 <i class="fa fa-edit"></i>
               <% end %>
-              <%= link_to admins_forsale_sale_path(sale), method: :delete, class:"btn btn-danger btn-circle", data: {confirm: "Certeza?"} do %>
-                <i class="fa fa-minus"></i>
-              <% end %>         
+      
             </td>
           </tr>
         <% end %>
