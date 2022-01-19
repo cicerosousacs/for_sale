@@ -16,46 +16,42 @@
     </div>
   <% end  %>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                      <%= form_with(model: [ :admins_forsale, @sale ], local: true ) do |form| %>
-                        <%= form.label :date %>
-                        <%= form.text_field :date, class:"form-control", placeholder:"Data da venda" %>
+  <div class="panel panel-default">
+      <div class="panel-body">
+          <div class="row">
+              <div class="col-lg-10">
+                <%= form_with(model: [ :admins_forsale, @sale ], local: true ) do |form| %>
+                  <%= form.label :date %>
+                  <%= form.text_field :date, class:"form-control", placeholder:"Data da venda" %>
 
-                        <%= form.label :client %>
-                        <%= form.select("client_id", @client_options, {include_blank: 'Selecione...'}, class:"form-control")%>
-                        <br>
-                        <%= form.label :payment %>
-                        <%= form.select("payment_id", @payment_options, {include_blank: 'Selecione...'}, class:"form-control") %>
-                        <br>
-                        <%= form.label :invoice %>
-                        <%= form.text_field :stock, class:"form-control" %>
+                  <%= form.label :client %>
+                  <%= form.select("client_id", @client_options, {include_blank: 'Selecione...'}, class:"form-control")%>
+                  
+                  <%= form.label :payment %>
+                  <%= form.select("payment_id", @payment_options, {include_blank: 'Selecione...'}, class:"form-control") %>
+                  
+                  <%= form.label :invoice %>
+                  <%= form.text_field :stock, class:"form-control" %>
 
-                        <%= form.label :paystatus %>
-                        <%= form.select("paystatus_id", @paystatus_options, {include_blank: 'Selecione...'}, class:"form-control") %>
-                        <br>
-
-                        <div id='adproducts'>
-
-                          <%= form.fields_for :adproducts do |adproduct| %>
-                            <%= render partial: "adproduct_fields", locals: { f: adproduct } %>
-                          <% end %>
-
-                          <%= link_to_add_association 'Adicionar Produto', form, :adproducts %>
-
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                  <%= form.label :paystatus %>
+                  <%= form.select("paystatus_id", @paystatus_options, {include_blank: 'Selecione...'}, class:"form-control") %>
+                 <br>
+                    <div id='adproducts'>
+                    
+                      <%= form.fields_for :adproducts do |adproduct| %>
+                        <%= render partial: "adproduct_fields", locals: { f: adproduct } %>
                       <% end %>
+
+                      <%= link_to_add_association '+ Produto', form, :adproducts %>
+
                     </div>
-                    <!-- /.col-lg-6 (nested) -->
-                </div>
-                <!-- /.row (nested) -->
-            </div>
-            <!-- /.panel-body -->
-        </div>
-</div>
+                    <br>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+                <% end %>
+              </div>
+              <!-- /.col-lg-6 (nested) -->
+          </div>
+          <!-- /.row (nested) -->
+      </div>
+      <!-- /.panel-body -->
+  </div>

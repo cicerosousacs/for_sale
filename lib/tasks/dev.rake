@@ -88,14 +88,26 @@ end
 
   desc "Adcionando Vendas de Exemplo"
   task add_sales: :environment do
-    10.times do |i|
-      Sale.create!(
-        date: Faker::Date.in_date_period,
-        client: Client.all.sample,
-        payment: Payment.all.sample,
-        invoice: Faker::Number.number(digits: 1),
-        paystatus: Paystatus.all.sample
-      )
+    Client.all.each do |client|
+      rand(2..10).times do |i|
+        params = { sale: {
+          date: Faker::Date.in_date_period,
+          client: Client.all.sample,
+          payment: Payment.all.sample,
+          invoice: Faker::Number.number(digits: 1),
+          paystatus: Paystatus.all.sample,
+          adproducts_attributes: []
+        }}
+
+        rand(2..6).times do |p|
+          params[:sale][:adproducts_attributes].push(
+            { product: Faker::Food.ingredient,
+            price: Faker::Number.decimal_part(digits: 2) }
+          )
+        end
+
+        Sale.create!(params[:sale])
+      end
     end
   end
 

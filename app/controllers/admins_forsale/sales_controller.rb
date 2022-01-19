@@ -10,7 +10,7 @@ class AdminsForsale::SalesController < AdminsForsaleController
 
   def new
     @sale = Sale.new
-
+    @adproduct = Adproduct.new
   end
 
   def create
@@ -45,7 +45,7 @@ class AdminsForsale::SalesController < AdminsForsaleController
 
   def params_sale
     params_sale = params.require(:sale).permit(:date, :client_id, :payment_id, :invoice, :paystatus_id, 
-    adproducts_attributes: [:id, :product, :price, :_destroy])
+    adproducts_attributes: [:id, :product, :price, :_destroy] )
   end
 
   def set_sale
